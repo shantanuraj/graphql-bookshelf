@@ -1,11 +1,8 @@
-// import bookshelf from '../../config/db';
-// import Post from '../Post/model';
+import bookshelf from '../../config/bookshelf';
+import Post from '../Post/model';
 
-// bookshelf.plugin('visibility');
+const User = bookshelf.Model.extend({
+    tableName: 'users'
+});
 
-// const user = bookshelf.Model.extend({
-//     tableName: 'users',
-//     posts() {
-//         return this.hasMany(Post, 'post_id');
-//     }
-// });
+export default User;

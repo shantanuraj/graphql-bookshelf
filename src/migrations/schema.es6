@@ -11,7 +11,7 @@ const Schema = {
         message: {type: 'string', maxlength: 500, nullable: true},
         slug: {type: 'string', maxlength: 150, nullable: false, unique: true},
         created_at: {type: 'dateTime', nullable: false},
-        updated_at: {type: 'dateTime', nullable: false}
+        updated_at: {type: 'dateTime', nullable: true}
     }
 }
 
