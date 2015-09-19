@@ -4,6 +4,7 @@ import Schema from './schema';
 import _ from 'lodash';
 import async from 'async';
 
+
 function createTable(tableName) {
     return db.schema.createTable(tableName, (table) => {
         let column;
@@ -77,8 +78,10 @@ const initDb = () => {
     async.series(calls, (error, result) => {
         if (!error) {
             console.log('Finished initialising database table.\n');
+            process.exit(0);
         } else {
             console.log(`Error initialising table: ${error}\n`);
+            process.exit(1);
         }
     });
 };
