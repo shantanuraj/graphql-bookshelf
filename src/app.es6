@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-require('./components/Post/routes')(app);
-require('./components/User/routes')(app);
+const routes = glob.sync('./components/**/routes.es6');
+routes.forEach(route => require(route)(app));
 
 app.listen(3000, () => console.log('API up on http://localhost:3000'));
