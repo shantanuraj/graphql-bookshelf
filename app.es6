@@ -9,12 +9,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-const entites = [
-    'User',
-    'Post'
-];
-
-const routes = entites.map(entity =>  `./components/${entity}/routes.es6`)  ;
+const routes = glob.sync('./src/components/**/routes.es6');
 routes.forEach(route => require(route)(app));
 
-app.listen(3000, () => console.log('API up on http://localhost:3000'));
+app.listen(3000, () => console.log('API up on http://localhost:3000\n'));
