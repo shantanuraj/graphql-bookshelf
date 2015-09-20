@@ -12,8 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "async": "^1.4.2",
+    "body-parser": "^1.14.0",
     "bookshelf": "^0.8.2",
     "express": "^4.13.3",
+    "glob": "^5.0.14",
     "knex": "^0.8.6",
     "lodash": "^3.10.1",
     "pg": "^4.4.1"
